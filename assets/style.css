@@ -1,38 +1,39 @@
-/* Palette (Adobe Color): FFF7DE cream, EBD4BC tan, E88451 orange, B2BBE3 periwinkle,
-   A39896 taupe. The palette is all pastel, so text and the header use a deep indigo
-   derived from the periwinkle, and text-sized accents use a darker orange; both meet
-   WCAG AA contrast. Dark theme: html[data-theme="dark"], or the system setting when the
-   visitor has not chosen (the header toggle stores the choice). */
+/* Palette (Adobe Color): A89776 khaki, 634C1F olive-brown, 003D5C brand blue,
+   D6A887 tan, 9E5A29 rust. Brand blue is the header and the text colour. The page and
+   banners use light tints of the tan, because the palette has no light neutral; every
+   text pair meets WCAG AA contrast. Dark theme: html[data-theme="dark"], or the system
+   setting when the visitor has not chosen (the header toggle stores the choice). */
 :root {
   color-scheme: light;
-  --paper: #FFF7DE;      /* page */
-  --hero: #EBD4BC;       /* hero / page headers (tan) */
-  --panel: #DDE1F3;      /* notes, code (light periwinkle) */
-  --ink: #252B48;        /* text (deep indigo from periwinkle) */
-  --muted: #5B504E;      /* secondary text (taupe, darkened) */
-  --rule: #D3BDA3;       /* hairlines (tan, darkened) */
-  --accent: #E88451;     /* orange: rules, markers, buttons */
-  --accent-text: #9A3F0B;/* orange for text and links */
-  --top: #252B48;        /* header band */
-  --top-ink: #FFF7DE;
-  --btn: #E88451;
-  --btn-ink: #252B48;
+  --paper: #FBF6EF;      /* page (tint of tan) */
+  --hero: #E8CDB6;       /* hero / page headers (lighter tan) */
+  --tan: #D6A887;        /* exact tan: stripe under banners */
+  --panel: #EFE4D6;      /* notes, code */
+  --ink: #003D5C;        /* text and headings: brand blue */
+  --muted: #634C1F;      /* secondary text: olive-brown */
+  --rule: #D8C9B3;       /* hairlines (khaki tint) */
+  --accent: #9E5A29;     /* rust: rules, markers, buttons, links */
+  --accent-text: #9E5A29;
+  --top: #003D5C;        /* header band */
+  --top-ink: #FBF6EF;
+  --btn: #9E5A29;
+  --btn-ink: #FFF8F0;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #1D2238; --hero: #2A3152; --panel: #2A3152; --ink: #FFF7DE;
-    --muted: #B2BBE3; --rule: #3E4670; --accent: #E88451; --accent-text: #F29A6E;
-    --top: #141829; --top-ink: #FFF7DE; --btn: #E88451; --btn-ink: #141829;
+    --paper: #00293F; --hero: #003D5C; --tan: #D6A887; --panel: #0A3550; --ink: #F6EDE2;
+    --muted: #D6A887; --rule: #1E5575; --accent: #C98B5E; --accent-text: #E3B796;
+    --top: #001B2B; --top-ink: #F6EDE2; --btn: #9E5A29; --btn-ink: #FFF8F0;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #1D2238; --hero: #2A3152; --panel: #2A3152; --ink: #FFF7DE;
-  --muted: #B2BBE3; --rule: #3E4670; --accent: #E88451; --accent-text: #F29A6E;
-  --top: #141829; --top-ink: #FFF7DE; --btn: #E88451; --btn-ink: #141829;
+  --paper: #00293F; --hero: #003D5C; --tan: #D6A887; --panel: #0A3550; --ink: #F6EDE2;
+  --muted: #D6A887; --rule: #1E5575; --accent: #C98B5E; --accent-text: #E3B796;
+  --top: #001B2B; --top-ink: #F6EDE2; --btn: #9E5A29; --btn-ink: #FFF8F0;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -55,7 +56,7 @@ nav a:hover { border-bottom-color: var(--accent); }
 nav a[aria-current="page"] { border-bottom-color: var(--accent); }
 
 /* hero */
-.hero { background: var(--hero); border-bottom: 1px solid var(--rule); }
+.hero { background: var(--hero); border-bottom: 5px solid var(--tan); }
 .hero .wrap { padding-top: 72px; padding-bottom: 72px; }
 .eyebrow { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
 .eyebrow::before { content: ""; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 14px; }
@@ -102,7 +103,7 @@ p { margin: 0 0 1em; max-width: 68ch; }
 @media (max-width: 760px) { .steps { grid-template-columns: 1fr; gap: 24px; } }
 
 /* page head (inner pages) */
-.pagehead { background: var(--hero); border-bottom: 1px solid var(--rule); }
+.pagehead { background: var(--hero); border-bottom: 5px solid var(--tan); }
 .pagehead .wrap { padding-top: 48px; padding-bottom: 44px; }
 .pagehead.product .wrap { display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: center; }
 .pagehead.product img { width: 96px; height: 96px; }
@@ -138,7 +139,7 @@ footer a { color: var(--muted); }
 
 /* theme toggle (shown by site.js) */
 .theme { font: inherit; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--top-ink);
-         background: transparent; border: 1px solid rgba(255,247,222,.55); border-radius: 0; padding: 4px 10px; margin-left: 28px; cursor: pointer; }
+         background: transparent; border: 1px solid rgba(246,237,226,.6); border-radius: 0; padding: 4px 10px; margin-left: 28px; cursor: pointer; }
 .theme:hover { border-color: var(--accent); }
 .theme[hidden] { display: none; }
 @media (max-width: 560px) { .theme { margin-left: 0; margin-top: 8px; } .right { gap: 12px; } }
