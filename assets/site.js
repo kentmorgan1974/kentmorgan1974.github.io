@@ -1,5 +1,31 @@
 // Progressive enhancement only: every page works without this file.
 (function () {
+  // Light / dark toggle. The choice is remembered in this browser only.
+  var root = document.documentElement;
+  var btn = document.querySelector(".theme");
+  var dark = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  function current() {
+    var a = root.getAttribute("data-theme");
+    return a || (dark && dark.matches ? "dark" : "light");
+  }
+  function label() {
+    if (!btn) return;
+    var next = current() === "dark" ? "light" : "dark";
+    btn.textContent = next === "dark" ? "Dark" : "Light";
+    btn.setAttribute("aria-label", "Switch to " + next + " mode");
+  }
+  if (btn) {
+    btn.hidden = false;
+    label();
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      label();
+    });
+    if (dark && dark.addEventListener) dark.addEventListener("change", label);
+  }
+
   var ua = navigator.userAgent || "";
   var isMac = /Mac|iPhone|iPad/.test(ua) && !/Windows/.test(ua);
 

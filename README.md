@@ -19,4 +19,6 @@ reads the latest version number from the program's GitHub release.
 ## Change the site name or headline
 
 Edit the `site` block at the top of `products.json` and run `python3 build.py`.
-Colours and type are in `assets/style.css`.
+Colours and type are in `assets/style.css` (palette variables at the top; the dark theme is the
+second block). The header has a light/dark toggle (`assets/site.js`) that remembers the choice
+in the visitor's browser.

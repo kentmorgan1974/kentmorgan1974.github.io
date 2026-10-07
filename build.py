@@ -34,12 +34,16 @@ def page(title, body, *, path, desc="", current="", extra_head=""):
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc or SITE['lede'])}">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>try{{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}}catch(e){{}}</script>
 <link rel="stylesheet" href="/assets/style.css">
 {extra_head}</head>
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="/">{e(SITE['name'])}</a>
-  <nav aria-label="Main">{nav}</nav>
+  <div class="right">
+    <nav aria-label="Main">{nav}</nav>
+    <button class="theme" type="button" hidden>Dark</button>
+  </div>
 </div></header>
 {body}
 <footer><div class="wrap">

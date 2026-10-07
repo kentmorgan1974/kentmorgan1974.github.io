@@ -1,28 +1,38 @@
-/* Palette (Adobe Color): D6D9CC sage, F2E0D0 cream, BF7B6B terracotta,
-   B9BBBD grey, 393F4A charcoal, 8A7875 taupe. Text colours below are darker/lighter
-   derivatives of these so they meet WCAG AA contrast. */
+/* Palette (Adobe Color): FFF7DE cream, EBD4BC tan, E88451 orange, B2BBE3 periwinkle,
+   A39896 taupe. The palette is all pastel, so text and the header use a deep indigo
+   derived from the periwinkle, and text-sized accents use a darker orange; both meet
+   WCAG AA contrast. Dark theme: html[data-theme="dark"], or the system setting when the
+   visitor has not chosen (the header toggle stores the choice). */
 :root {
-  --paper: #FBF7F2;      /* page */
-  --cream: #F2E0D0;      /* hero / panels */
-  --sage: #D6D9CC;       /* quiet bands */
-  --ink: #393F4A;        /* text, header */
-  --muted: #6B5C59;      /* secondary text (taupe, darkened) */
-  --rule: #B9BBBD;       /* hairlines */
-  --accent: #BF7B6B;     /* terracotta: rules and markers only */
-  --accent-text: #8F4D3F;/* terracotta for text and links */
-  --top: #393F4A;        /* header band */
-  --top-ink: #F2E0D0;
-  --btn: #393F4A;
-  --btn-ink: #F2E0D0;
+  color-scheme: light;
+  --paper: #FFF7DE;      /* page */
+  --hero: #EBD4BC;       /* hero / page headers (tan) */
+  --panel: #DDE1F3;      /* notes, code (light periwinkle) */
+  --ink: #252B48;        /* text (deep indigo from periwinkle) */
+  --muted: #5B504E;      /* secondary text (taupe, darkened) */
+  --rule: #D3BDA3;       /* hairlines (tan, darkened) */
+  --accent: #E88451;     /* orange: rules, markers, buttons */
+  --accent-text: #9A3F0B;/* orange for text and links */
+  --top: #252B48;        /* header band */
+  --top-ink: #FFF7DE;
+  --btn: #E88451;
+  --btn-ink: #252B48;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #2B3038; --cream: #393F4A; --sage: #323842; --ink: #EDE3DA;
-    --muted: #B9BBBD; --rule: #505764; --accent: #D08E7E; --accent-text: #E0A596;
-    --top: #232830; --top-ink: #F2E0D0; --btn: #F2E0D0; --btn-ink: #232830;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #1D2238; --hero: #2A3152; --panel: #2A3152; --ink: #FFF7DE;
+    --muted: #B2BBE3; --rule: #3E4670; --accent: #E88451; --accent-text: #F29A6E;
+    --top: #141829; --top-ink: #FFF7DE; --btn: #E88451; --btn-ink: #141829;
   }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #1D2238; --hero: #2A3152; --panel: #2A3152; --ink: #FFF7DE;
+  --muted: #B2BBE3; --rule: #3E4670; --accent: #E88451; --accent-text: #F29A6E;
+  --top: #141829; --top-ink: #FFF7DE; --btn: #E88451; --btn-ink: #141829;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -40,11 +50,12 @@ img { max-width: 100%; display: block; }
 nav a { color: var(--top-ink); text-decoration: none; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
         margin-left: 28px; padding-bottom: 5px; border-bottom: 2px solid transparent; }
 nav a:first-child { margin-left: 0; }
+.right { display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap; }
 nav a:hover { border-bottom-color: var(--accent); }
 nav a[aria-current="page"] { border-bottom-color: var(--accent); }
 
 /* hero */
-.hero { background: var(--cream); border-bottom: 1px solid var(--rule); }
+.hero { background: var(--hero); border-bottom: 1px solid var(--rule); }
 .hero .wrap { padding-top: 72px; padding-bottom: 72px; }
 .eyebrow { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
 .eyebrow::before { content: ""; display: block; width: 32px; height: 3px; background: var(--accent); margin-bottom: 14px; }
@@ -91,7 +102,7 @@ p { margin: 0 0 1em; max-width: 68ch; }
 @media (max-width: 760px) { .steps { grid-template-columns: 1fr; gap: 24px; } }
 
 /* page head (inner pages) */
-.pagehead { background: var(--cream); border-bottom: 1px solid var(--rule); }
+.pagehead { background: var(--hero); border-bottom: 1px solid var(--rule); }
 .pagehead .wrap { padding-top: 48px; padding-bottom: 44px; }
 .pagehead.product .wrap { display: grid; grid-template-columns: 96px 1fr; gap: 28px; align-items: center; }
 .pagehead.product img { width: 96px; height: 96px; }
@@ -117,10 +128,17 @@ td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--rule); vertical-ali
 @media (max-width: 680px) { .two { grid-template-columns: 1fr; } }
 .two h3 { font-size: 1.1rem; border-top: 3px solid var(--accent); padding-top: 10px; margin-bottom: 8px; }
 ol.num { padding-left: 1.3rem; } ol.num li { margin: 7px 0; }
-.note { border-left: 3px solid var(--accent); background: var(--sage); padding: 14px 18px; margin: 20px 0; max-width: 68ch; }
+.note { border-left: 3px solid var(--accent); background: var(--panel); padding: 14px 18px; margin: 20px 0; max-width: 68ch; }
 .note p { margin: 0; }
-kbd, code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .88em; background: var(--sage); padding: 1px 5px; }
+kbd, code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .88em; background: var(--panel); padding: 1px 5px; }
 
 footer { border-top: 1px solid var(--rule); margin-top: 24px; }
 footer .wrap { padding-top: 26px; padding-bottom: 40px; font-size: .85rem; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 footer a { color: var(--muted); }
+
+/* theme toggle (shown by site.js) */
+.theme { font: inherit; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--top-ink);
+         background: transparent; border: 1px solid rgba(255,247,222,.55); border-radius: 0; padding: 4px 10px; margin-left: 28px; cursor: pointer; }
+.theme:hover { border-color: var(--accent); }
+.theme[hidden] { display: none; }
+@media (max-width: 560px) { .theme { margin-left: 0; margin-top: 8px; } .right { gap: 12px; } }
