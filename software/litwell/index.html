@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Litwell — J. Kent Morgan Consulting</title>
+<meta name="description" content="Search scientific papers, preprints and patents from one window, and keep every result in a single file.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/">J. Kent Morgan Consulting</a>
+  <nav aria-label="Main"><a href="/">Home</a><a href="/software/" aria-current="page">Software</a></nav>
+</div></header>
+<main>
+<section class="pagehead product"><div class="wrap">
+  <img src="/assets/litwell.png" alt="Litwell icon" width="96" height="96">
+  <div>
+    <p class="crumb"><a href="/">Home</a> / <a href="/software/">Software</a> / Litwell</p>
+    <h1>Litwell</h1>
+    <p class="lede" style="margin-top:12px">Search scientific papers, preprints and patents from one window, and keep every result in a single file.</p>
+  </div>
+</div></section>
+
+<div class="wrap cols">
+<article>
+  <h2 class="sub" style="margin-top:0;border-top:0;padding-top:0">What it does</h2>
+  <p>Litwell is a desktop program for searching the published literature, preprint servers and patent offices without visiting each one separately. You enter a keyword, author, title, journal or date range, choose a source, and Litwell adds the results to one file on your computer.</p><p>Each record is kept with its title, authors, journal, date, DOI and a working link, along with the date and terms of the search that found it. Duplicates are skipped by DOI (or by title when there is none), so you can run many searches over weeks and still end up with a single clean list.</p>
+  <ul class="plain"><li>Eight sources, chosen from a drop-down list.</li><li>Results saved as an Excel workbook (with a Search Log sheet of every query), CSV, plain text, Markdown, RIS or BibTeX.</li><li>Continue an existing file, or start a new dated one at the beginning of a session.</li><li>A duplicate checker for Excel files that asks before deleting anything and saves a backup first.</li><li>Crash-safe saving: if a file is open in Excel, or becomes damaged, the previous file is kept and the new results are written to a recovery file.</li></ul>
+
+  <h2 class="sub">Where it searches</h2>
+  <table>
+    <thead><tr><th>Source</th><th>Covers</th><th>Key needed</th></tr></thead>
+    <tbody><tr><td><strong>PubMed</strong></td><td>Biomedical and life-science literature (NCBI)</td><td>None</td></tr><tr><td><strong>Crossref</strong></td><td>Publisher metadata and DOIs across all fields</td><td>None</td></tr><tr><td><strong>OpenAlex</strong></td><td>Broad index of scholarly works</td><td>None (optional free key)</td></tr><tr><td><strong>Europe PMC</strong></td><td>Life-science literature and preprints</td><td>None</td></tr><tr><td><strong>arXiv</strong></td><td>Physics, mathematics, computer science and related preprints</td><td>None</td></tr><tr><td><strong>Preprint servers</strong></td><td>bioRxiv, SSRN, OSF, ChemRxiv and other servers from the DOAPR directory, searched together</td><td>None</td></tr><tr><td><strong>USPTO patents</strong></td><td>US granted patents and pending applications</td><td>Free USPTO key</td></tr><tr><td><strong>EPO worldwide patents</strong></td><td>Published patents and applications from patent offices worldwide</td><td>Free EPO key and secret</td></tr></tbody>
+  </table>
+
+  <h2 class="sub" id="patents">Setting up patent search</h2>
+<p>The two patent sources are free, but each patent office asks you to identify yourself with a key. It is a one-time step of a few minutes. The other six sources need nothing.</p>
+<div class="two">
+  <div><h3>USPTO (US patents)</h3><ol class="num"><li>Sign in or create an account at <a href="https://data.uspto.gov">data.uspto.gov</a>.</li><li>In your account settings, generate or copy your API key.</li><li>In Litwell choose <strong>File → API Keys &amp; Contact…</strong>, paste it into <em>USPTO API key</em>, and save.</li></ol></div>
+  <div><h3>EPO (worldwide patents)</h3><ol class="num"><li>Register for free at <a href="https://developers.epo.org">developers.epo.org</a>.</li><li>Sign in and create an app. You receive a Consumer Key and a Consumer Secret.</li><li>In Litwell choose <strong>File → API Keys &amp; Contact…</strong>, paste both into the EPO fields, and save.</li></ol></div>
+</div>
+
+  <h2 class="sub" id="first-run">The first time you open it</h2>
+  <p>The program is not signed with a paid developer certificate, so your computer asks you to confirm once. After that it opens normally.</p>
+  <div class="two">
+    <div><h3>Windows</h3><ol class="num">
+      <li>Download the file and open it.</li>
+      <li>If you see <em>Windows protected your PC</em>, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+    </ol></div>
+    <div><h3>Mac</h3><ol class="num">
+      <li>Download the zip and double-click it to unpack it.</li>
+      <li>Drag the app to Applications and open it.</li>
+      <li>If macOS says it cannot check the app, open <strong>System Settings → Privacy &amp; Security</strong>, scroll down and click <strong>Open Anyway</strong>. On older versions of macOS, right-click the app and choose <strong>Open</strong>.</li>
+    </ol></div>
+  </div>
+
+  <h2 class="sub">Privacy</h2>
+  <p>Searches go directly from your computer to the public databases. Litwell has no account system, and nothing is sent to us. Your results are saved wherever you choose, and your settings (including any keys you enter) are stored in a small file in your user folder.</p>
+</article>
+
+<aside class="dl" data-has-os aria-labelledby="dlh">
+  <h2 id="dlh">Download</h2>
+  <div class="meta"><span data-version-repo="kentmorgan1974/litwell">Latest version</span></div>
+  <div class="meta yours" aria-live="polite"></div>
+  <a class="btn full" data-os="win" href="https://github.com/kentmorgan1974/litwell/releases/latest/download/Litwell-Windows.exe">Windows</a>
+  <a class="btn full ghost" data-os="mac" href="https://github.com/kentmorgan1974/litwell/releases/latest/download/Litwell-macOS.zip">Mac</a>
+  <ul>
+    <li><b>Windows</b> 10 or 11, 64-bit. One file, no installer.</li>
+    <li><b>Mac</b> Apple silicon or Intel. Zip containing the app.</li>
+    <li><b>Cost</b> Free.</li>
+    <li><a href="https://github.com/kentmorgan1974/litwell/releases">All versions</a></li>
+  </ul>
+</aside>
+</div>
+</main>
+<footer><div class="wrap">
+  <span>&copy; 2026 J. Kent Morgan Consulting</span>
+  <span>Software is provided as-is, without warranty.</span>
+</div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "site": {
+    "name": "J. Kent Morgan Consulting",
+    "title": "Software",
+    "headline": "Tools for research and analysis.",
+    "lede": "Practical desktop programs, each with its own page describing what it does, what it needs, and a direct download for Windows and Mac."
+  },
+  "products": [
+    {
+      "slug": "litwell",
+      "name": "Litwell",
+      "tagline": "Search scientific papers, preprints and patents from one window, and keep every result in a single file.",
+      "icon": "/assets/litwell.png",
+      "repo": "kentmorgan1974/litwell",
+      "windows_asset": "Litwell-Windows.exe",
+      "mac_asset": "Litwell-macOS.zip",
+      "platforms": "Windows 10/11 (64-bit) · macOS (Apple silicon and Intel)",
+      "summary": [
+        "Litwell is a desktop program for searching the published literature, preprint servers and patent offices without visiting each one separately. You enter a keyword, author, title, journal or date range, choose a source, and Litwell adds the results to one file on your computer.",
+        "Each record is kept with its title, authors, journal, date, DOI and a working link, along with the date and terms of the search that found it. Duplicates are skipped by DOI (or by title when there is none), so you can run many searches over weeks and still end up with a single clean list."
+      ],
+      "features": [
+        "Eight sources, chosen from a drop-down list.",
+        "Results saved as an Excel workbook (with a Search Log sheet of every query), CSV, plain text, Markdown, RIS or BibTeX.",
+        "Continue an existing file, or start a new dated one at the beginning of a session.",
+        "A duplicate checker for Excel files that asks before deleting anything and saves a backup first.",
+        "Crash-safe saving: if a file is open in Excel, or becomes damaged, the previous file is kept and the new results are written to a recovery file."
+      ],
+      "sources": [
+        ["PubMed", "Biomedical and life-science literature (NCBI)", "None"],
+        ["Crossref", "Publisher metadata and DOIs across all fields", "None"],
+        ["OpenAlex", "Broad index of scholarly works", "None (optional free key)"],
+        ["Europe PMC", "Life-science literature and preprints", "None"],
+        ["arXiv", "Physics, mathematics, computer science and related preprints", "None"],
+        ["Preprint servers", "bioRxiv, SSRN, OSF, ChemRxiv and other servers from the DOAPR directory, searched together", "None"],
+        ["USPTO patents", "US granted patents and pending applications", "Free USPTO key"],
+        ["EPO worldwide patents", "Published patents and applications from patent offices worldwide", "Free EPO key and secret"]
+      ],
+      "patent_setup": {
+        "uspto": [
+          "Sign in or create an account at <a href=\"https://data.uspto.gov\">data.uspto.gov</a>.",
+          "In your account settings, generate or copy your API key.",
+          "In Litwell choose <strong>File → API Keys &amp; Contact…</strong>, paste it into <em>USPTO API key</em>, and save."
+        ],
+        "epo": [
+          "Register for free at <a href=\"https://developers.epo.org\">developers.epo.org</a>.",
+          "Sign in and create an app. You receive a Consumer Key and a Consumer Secret.",
+          "In Litwell choose <strong>File → API Keys &amp; Contact…</strong>, paste both into the EPO fields, and save."
+        ]
+      },
+      "privacy": "Searches go directly from your computer to the public databases. Litwell has no account system, and nothing is sent to us. Your results are saved wherever you choose, and your settings (including any keys you enter) are stored in a small file in your user folder."
+    }
+  ]
+}
