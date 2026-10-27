@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Litwell — J. Kent Morgan Consulting</title>
-<meta name="description" content="Search scientific papers, preprints and patents from one window, and keep every result in a single file.">
+<meta name="description" content="Search scientific papers, preprints and patents at once, and get one ranked Excel file.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="stylesheet" href="/assets/style.css">
@@ -23,15 +23,15 @@
   <div>
     <p class="crumb"><a href="/">Home</a> / <a href="/software/">Software</a> / Litwell</p>
     <h1>Litwell</h1>
-    <p class="lede" style="margin-top:12px">Search scientific papers, preprints and patents from one window, and keep every result in a single file.</p>
+    <p class="lede" style="margin-top:12px">Search scientific papers, preprints and patents at once, and get one ranked Excel file.</p>
   </div>
 </div></section>
 
 <div class="wrap cols">
 <article>
   <h2 class="sub" style="margin-top:0;border-top:0;padding-top:0">What it does</h2>
-  <p>Litwell is a desktop program for searching the published literature, preprint servers and patent offices without visiting each one separately. You enter a keyword, author, title, journal or date range, choose a source, and Litwell adds the results to one file on your computer.</p><p>Each record is kept with its title, authors, journal, date, DOI and a working link, along with the date and terms of the search that found it. Duplicates are skipped by DOI (or by title when there is none), so you can run many searches over weeks and still end up with a single clean list.</p>
-  <ul class="plain"><li>Eight sources, chosen from a drop-down list.</li><li>Results saved as an Excel workbook (with a Search Log sheet of every query), CSV, plain text, Markdown, RIS or BibTeX.</li><li>Continue an existing file, or start a new dated one at the beginning of a session.</li><li>A duplicate checker for Excel files that asks before deleting anything and saves a backup first.</li><li>Crash-safe saving: if a file is open in Excel, or becomes damaged, the previous file is kept and the new results are written to a recovery file.</li></ul>
+  <p>Litwell is a free, open-source desktop program for searching the published literature, preprint servers and patent offices without visiting each one separately. Enter a topic, tick any number of sources, and Litwell asks them all at the same time, merges the duplicates, filters out the obvious misses, scores what is left from 0 to 100, and saves it to one workbook on your computer.</p><p>Searches are exact by default: a topic such as B2 protein is searched as a phrase, not as two loose words. Add a must-contain list and an exclude list, save the whole set as a named profile, and see in the Search Log exactly how many rows each source and each rule removed.</p>
+  <ul class="plain"><li>Tick any of eight sources and search them together: PubMed, Crossref, OpenAlex, Europe PMC, arXiv, preprint servers, USPTO and EPO.</li><li>Match topics as an exact phrase, all words or any word; add Must also contain and Exclude terms; save and reuse named profiles.</li><li>A Relevance Score from 0 to 100 on every row, best first, from published rules. No AI and no key needed.</li><li>Abstracts, citation counts and free full-text links where the sources provide them; one row per paper even when several sources found it.</li><li>A workbook with Results, Summary, Search Log and Glossary sheets, and a New Since Last Run flag so repeat searches show only what is new.</li><li>Optional AI triage with a model on your own computer (Ollama, free); off by default, and nothing is sent to a cloud service.</li><li>A How-to Guide (PDF) built into the app. Open source under the Apache License 2.0.</li></ul>
 
   <h2 class="sub">Where it searches</h2>
   <table>

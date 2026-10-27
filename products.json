@@ -9,22 +9,24 @@
     {
       "slug": "litwell",
       "name": "Litwell",
-      "tagline": "Search scientific papers, preprints and patents from one window, and keep every result in a single file.",
+      "tagline": "Search scientific papers, preprints and patents at once, and get one ranked Excel file.",
       "icon": "/assets/litwell.png",
       "repo": "kentmorgan1974/litwell",
       "windows_asset": "Litwell-Windows.exe",
       "mac_asset": "Litwell-macOS.zip",
       "platforms": "Windows 10/11 (64-bit) · macOS (Apple silicon and Intel)",
       "summary": [
-        "Litwell is a desktop program for searching the published literature, preprint servers and patent offices without visiting each one separately. You enter a keyword, author, title, journal or date range, choose a source, and Litwell adds the results to one file on your computer.",
-        "Each record is kept with its title, authors, journal, date, DOI and a working link, along with the date and terms of the search that found it. Duplicates are skipped by DOI (or by title when there is none), so you can run many searches over weeks and still end up with a single clean list."
+        "Litwell is a free, open-source desktop program for searching the published literature, preprint servers and patent offices without visiting each one separately. Enter a topic, tick any number of sources, and Litwell asks them all at the same time, merges the duplicates, filters out the obvious misses, scores what is left from 0 to 100, and saves it to one workbook on your computer.",
+        "Searches are exact by default: a topic such as B2 protein is searched as a phrase, not as two loose words. Add a must-contain list and an exclude list, save the whole set as a named profile, and see in the Search Log exactly how many rows each source and each rule removed."
       ],
       "features": [
-        "Eight sources, chosen from a drop-down list.",
-        "Results saved as an Excel workbook (with a Search Log sheet of every query), CSV, plain text, Markdown, RIS or BibTeX.",
-        "Continue an existing file, or start a new dated one at the beginning of a session.",
-        "A duplicate checker for Excel files that asks before deleting anything and saves a backup first.",
-        "Crash-safe saving: if a file is open in Excel, or becomes damaged, the previous file is kept and the new results are written to a recovery file."
+        "Tick any of eight sources and search them together: PubMed, Crossref, OpenAlex, Europe PMC, arXiv, preprint servers, USPTO and EPO.",
+        "Match topics as an exact phrase, all words or any word; add Must also contain and Exclude terms; save and reuse named profiles.",
+        "A Relevance Score from 0 to 100 on every row, best first, from published rules. No AI and no key needed.",
+        "Abstracts, citation counts and free full-text links where the sources provide them; one row per paper even when several sources found it.",
+        "A workbook with Results, Summary, Search Log and Glossary sheets, and a New Since Last Run flag so repeat searches show only what is new.",
+        "Optional AI triage with a model on your own computer (Ollama, free); off by default, and nothing is sent to a cloud service.",
+        "A How-to Guide (PDF) built into the app. Open source under the Apache License 2.0."
       ],
       "sources": [
         ["PubMed", "Biomedical and life-science literature (NCBI)", "None"],
